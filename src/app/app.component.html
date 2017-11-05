@@ -5,12 +5,29 @@
       <hr>
       <app-servers></app-servers>
       <app-success></app-success>
-
-      <button class='btn btn-primary' [disabled]='!allowNewServer'> Add New server </button>
       <br>
 
-      {{allowNewServer}}
-      <p>{{'server'}} with id {{serverId}} is {{getServerStatus()}} </p>
+      <label for="Server">Server Name</label>
+      <input type="text"
+      class="form-control"
+      (input)="onUpdateServerName($event)"
+      >
+      <input type="text"
+      class="form-control"
+      [(ngModel)]="serverName"
+      >
+
+      {{serverName}} <br>  
+      <button class='btn btn-primary' [disabled]='!allowNewServer' (click)="onCreateServer()"> Add New server </button>
+      <br>
+      
+      
+      {{allowNewServer}} <br>
+      {{serverCreationStatus}}
+
+      <button class='btn btn-primary'(click)="console.log('Hello')"> Click </button>
+      
+      <p [ngStyle]={ background-color=getColor() }>{{'server'}} with id {{serverId}} is {{getServerStatus()}} </p>
     </div>
     </div>
   </div> 

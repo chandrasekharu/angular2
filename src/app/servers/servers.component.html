@@ -2,5 +2,22 @@
   servers works!
 </p>
 
+<div>
+  <input type="text"
+  class="forms-control"
+  [(ngModel)]="username"
+  >
+
+  <button (click)="onCreateUser()">Add User</button>
+  <p *ngIf="userName; else noUsername"> user name is created with {{ username}}  </p>
+  <ng-template #noUsername>
+    <h1>No user is created</h1>
+  </ng-template>
+
+</div>
+
+
+
+<!-- <button class="btn btn-primary" [disabled]='isUsernameEmpty()' (click)="emptyString()"> Reset username</button> -->
 <h2> Warning Danger !! </h2>
 

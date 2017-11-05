@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  username='raju';
+  userName=false;
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
+
+  emptyString(){
+    this.username='';
+  }
+
+  isUsernameEmpty(){
+    return this.username==="";
+  }
+  onCreateUser(){
+    this.userName=true;
+  }
+
 
 }

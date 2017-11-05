@@ -11,15 +11,29 @@ export class AppComponent {
   serverId: number= 12;
   serverStatus: string='offline';
   allowNewServer= false;
+  serverCreationStatus="No Server was created";
+  serverName='';
 
   constructor() {
-    setTimeout( () =>{
-      this.allowNewServer=true;
-    },2000)
+    // setTimeout( () =>{
+    //   this.allowNewServer=true;
+    // },2000)
+
+    
   }
 
-  
+  onUpdateServerName(){
+     this.serverName=(<HTMLInputElement>event.target).value;
+  }
+
   getServerStatus(){
     return this.serverStatus;
+  }
+  onCreateServer(){
+    this.serverCreationStatus="server was created with"+this.serverName;
+  }
+
+  getColor(){
+    return this.serverStatus
   }
 }
