@@ -1,8 +1,6 @@
-<p>
-  servers works!
-</p>
 
-<div>
+
+<!-- <div>
   <input type="text"
   class="forms-control"
   [(ngModel)]="username"
@@ -14,10 +12,24 @@
     <h1>No user is created</h1>
   </ng-template>
 
-</div>
+</div> -->
+
+<div class="container">
+    <div class="row"> 
+      <div class="col-xs-12">
+    <button class="btn btn-primary" (click)="hidePara()" > Display Details    </button>
+    <p *ngIf="details; else noDetails"> Secret Password='tuna'</p>
+    <div 
+    *ngFor="let log of logall; let i=index"
+    [ngStyle]="{backgroundColor: i>=4 ? 'blue':'transparent'}"
+    [ngClass]="{'white-text':i>=4}"
+    >Hi {{log}}</div>
+  </div>
+  </div>
+  </div>
 
 
 
 <!-- <button class="btn btn-primary" [disabled]='isUsernameEmpty()' (click)="emptyString()"> Reset username</button> -->
-<h2> Warning Danger !! </h2>
+<!-- <h2> Warning Danger !! </h2> -->
 

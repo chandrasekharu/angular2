@@ -9,6 +9,9 @@ export class ServersComponent implements OnInit {
 
   username='raju';
   userName=false;
+  details=false;
+  logall=[];
+  log:number=0;
   constructor() {
 
   }
@@ -26,6 +29,13 @@ export class ServersComponent implements OnInit {
   onCreateUser(){
     this.userName=true;
   }
+  
+  hidePara(){
+    this.details=!this.details;
+    // this.logall.push(this.logall.length+1);
+    this.logall.push(new Date()); 
+  }
+
 
 
 }
